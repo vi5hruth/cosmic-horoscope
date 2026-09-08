@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line-violet;
+  }
+  html,
+  body,
+  #root {
+    @apply h-full w-full overflow-x-hidden;
+  }
+  body {
+    @apply bg-deep-space text-starlight font-body antialiased;
+  }
+  ::selection {
+    @apply bg-electric-purple/40 text-starlight;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-midnight-navy/60 backdrop-blur-xl border border-line-violet rounded-2xl;
+  }
+
+  .visible-focus:focus-visible {
+    @apply outline-none ring-2 ring-celestial-gold ring-offset-2 ring-offset-deep-space;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.r3f-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
